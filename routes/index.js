@@ -17,5 +17,24 @@ router.get("/inserir", async function(req, res, netx){
   res.json(autores);
 });
 
+router.get("/deletar", async function(req, res, netx){
+  const deletar = {
+    id: "2"
+  }
+  const autores = await Autor.deletar(deletar);
+  res.json(autores);
+});
+
+router.get("/atualizar", async function(req, res, netx){
+  const atualizar = {
+    nome: "guilherme",
+    sobrenome: "silva",
+    data_nascimento: "2007/03/02",
+    id: "1"
+  }
+  const autores = await Autor.atualizar(atualizar);
+  res.json(autores);
+
+   });
 
 module.exports = router;
