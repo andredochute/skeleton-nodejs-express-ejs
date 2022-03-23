@@ -14,21 +14,16 @@ router.post("/inserir", async function(req, res, netx){
  
 });
 
-router.get("/deletar", async function(req, res, netx){
-  const deletar = {
-    id: "2"
-  }
-  const autores = await Autor.deletar(deletar);
+router.delete("/deletar", async function(req, res, netx){
+  // const deletar = {
+  //   id: "2"
+  // }
+  const autores = await Autor.deletar(req.body);
   res.json(autores);
 });
 
 router.put("/atualizar", async function(req, res, netx){
-  // const atualizar = {
-  //   nome: "guilherme",
-  //   sobrenome: "silva",
-  //   data_nascimento: "2007/03/02",
-  //   id: "1"
-  // }
+
   const autores = await Autor.atualizar(req.body);
   res.json(autores);
 
