@@ -11,7 +11,7 @@ class Autor {
 
   static async selecionar() {
     const connect = await db.connect();
-    return await connect.query("Select * From autores");
+    return await connect.query("Select * From autores ORDER BY id");
 
 
   }

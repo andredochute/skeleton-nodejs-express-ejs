@@ -22,14 +22,14 @@ router.get("/deletar", async function(req, res, netx){
   res.json(autores);
 });
 
-router.get("/atualizar", async function(req, res, netx){
-  const atualizar = {
-    nome: "guilherme",
-    sobrenome: "silva",
-    data_nascimento: "2007/03/02",
-    id: "1"
-  }
-  const autores = await Autor.atualizar(atualizar);
+router.put("/atualizar", async function(req, res, netx){
+  // const atualizar = {
+  //   nome: "guilherme",
+  //   sobrenome: "silva",
+  //   data_nascimento: "2007/03/02",
+  //   id: "1"
+  // }
+  const autores = await Autor.atualizar(req.body);
   res.json(autores);
 
    });
